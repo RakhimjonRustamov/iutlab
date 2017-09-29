@@ -1,0 +1,77 @@
+/*.container-fluid {
+	width: 100%;
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/img/contact-bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed; background-size: cover;
+}*/
+nav{position: fixed !important;}
+
+.top-info h1 {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	font: 80px/80px moscow!important;
+    color: #f1c40f!important;
+    text-transform: capitalize!important;
+    position: relative!important;
+}
+.box p { 
+	padding: 0!important;
+	margin: 0!important;
+	font-size: 22px;
+	color: white!important;
+}
+.box h2{
+	color: white!important;
+	font-weight: bold;
+}
+.contact-form-heading{
+	font: 80px/80px moscow!important;
+    color: #f1c40f;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 80px;
+}
+.title-select{color: #fff; text-align: center;}
+input{color:#fff;font-size: 1.3em!important;background:none;width: 280px!important; margin-bottom: 1.25rem!important;border: solid 2px white;border-radius: 3px; padding: 11px;}
+::-webkit-input-placeholder{color:#f1c40f!important;}
+:-moz-placeholder{color:#f1c40f!important;}
+textarea{color: #fff;height: 129px!important;margin-bottom: 1.15rem!important;resize: none; width: 280px!important;font-size: 1.5em!important; background: none;border:solid 2px white; padding: 11px;border-radius: 3px;}
+.check{display:block; text-align:left;}
+.check label{color: #f1c40f;font-size: 2.0125rem!important; font-weight: 400; display: inline-block;margin-left: 1rem}
+.check input{float: left!important; left: 0!important;width: 5%!important;}
+.form-control{color: white!important;}
+
+.bootstrap-select{width: 590px!important;}
+.bootstrap-select>.dropdown-toggle{font-size: 20px;}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option{text-align: center;}
+.bootstrap-select .dropdown-toggle:hover{background-color: #fff;}
+option{color: #f1c40f;font-size: 14px;}
+.btn-default{background: none;}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option{color: #f1c40f;}
+.bootstrap-select.btn-group .dropdown-toggle .caret{color: #f1c40f;}
+.bootstrap-select .dropdown-toggle:focus{background: none;}
+.open>.dropdown-toggle.btn-default:focus{background: none;}
+.dropdown-menu{text-transform: none;}
+.form-control{background: none; padding-right: 0%!important;}
+
+.btn-send{text-decoration: none!important; font-size: 20px; border: 2px solid white;padding: 8px 60px 8px 60px; border-radius: 2px;color: white;}
+.btn-send:hover{color: white;background-color: #f1c40f;}
+
+.heading{text-align: center;margin-top: 80px; color: white;}
+.heading h3{margin-bottom: 70px;}
+
+#contactSubmit{margin-top: 50px;text-align: center!important; background: none;color: white;font-size: 24px; padding: 5px 50px 5px 50px;border: 1px solid white; border-radius: 5px;}
+#contactSubmit:hover{background-color: #f1c40f;}
+address{text-align: center; color: white; font-size: 24px;margin-top: 20px;margin-bottom: 100px;}
+
+#footer{background:#fff;width:100%;float:left;padding:60px 0 40px; font-size: 20px;}
+#footer ul.social.footer{width:100%;text-align:center;margin:0 0 30px;padding:0}
+#footer ul.social.footer li{display:inline-block;zoom:1;*display:inline}
+#footer ul.social.footer li a{text-decoration: none; width:40px;height:40px;line-height:40px;margin:0 3px;text-align:center;display:block;color:#000}
+#footer ul.social.footer li a:hover{background:url(../img/footer-social.png) no-repeat}
+#footer .bd-footer{width:98%;margin:0 auto;text-align:center;padding:0 1%;font:18px/18px moscow;color:#000}
+#footer .bd-footer .sep{display:block}
+#footer .bd-footer ul{margin:20px 0 0;padding:0}
+#footer .bd-footer ul li{display:inline-block;zoom:1;*display:inline}
+#footer .bd-footer ul li a{margin:0 10px;text-decoration: none!important;font-size: 22px;color: #000;}
+#footer .bd-footer ul li a:hover{box-shadow: inset 0px -1px 0  0 red;}

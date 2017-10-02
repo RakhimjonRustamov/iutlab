@@ -30,5 +30,5 @@ Route::get('admin/blog', ['uses'=>'BlogController@getIndex', 'as'=>'blog.index']
 Route::get('/admin', 'ProjectController@index')->name('admin.dashboard');
 Route::post('/admin', 'ProjectController@store')->name('projects.store');
 Route::delete('admin/{project}',array('uses' => 'ProjectController@destroy', 'as' => 'projects.destroy'));
-
+Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 

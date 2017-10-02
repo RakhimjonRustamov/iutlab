@@ -167,6 +167,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
+        NotificationChannels\Telegram\TelegramServiceProvider::class,
         /*
          * Package Service Providers...
          */

@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Str;
+use App\Mail\verifyEmail;
+use Mail;
 class RegisterController extends Controller
 {
     /*
@@ -62,17 +64,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'verifyToken'=> Str::random(40),
         ]);
     }
 
-    public function verifyEmailFirst(){
-        return view('email.verifyEmailFirst');
-
-    }
 
 }

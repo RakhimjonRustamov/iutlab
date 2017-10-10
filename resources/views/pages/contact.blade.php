@@ -5,14 +5,17 @@
 @endsection
 
 @section('scripts')
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    {{--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>--}}
 @endsection
 
 @section('content')
+
     <div class="container-fluid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/img/contact-bg.jpg'); background-position: center; background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
+
     <div class="row top-animate">
         <div class="top-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h1>Свяжитесь с нами</h1>
+            @include('partials._message')
         </div>
         <div class="box col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <center>
@@ -38,20 +41,46 @@
         </div>
     </div>
 
-    <div class="row slideanim" style="margin-top: 100px;">
-        <h2 class="contact-form-heading">Отправить Запрос</h2>
-        <div class="col-md-6 col-md-offset-3">
-
-           <form action="{{route('contact')}}" method="POST" >
-               {{ csrf_field() }}
-               <input type="text" class="form-control" name="email" placeholder="Enter email">
-               <input  type="text"  class="form-control" name="message" placeholder="Enter message">
-               <button type="submit" class="btn btn-success">Send Message</button>
-           </form>
-
-
+        <div class="row slideanim" style="margin-top: 100px;">
+            <h2 class="contact-form-heading">Отправить Запрос</h2>
+            <div class="col-md-6 col-md-offset-3">
+                <div id="contact-form" style="position: relative;">
+                    <center><form action="{{route('contact')}}" method="POST" name="myForm" >
+                            {{csrf_field()}}
+                            <div class="row" style="padding-bottom: 65px;">
+                                <div class="col-md-6 col-sm-6 column" style="margin-right: 0!important;">
+                                    <input id="full_name" maxlength="40" name="full_name" size="20" type="text" placeholder="Ваше имя" class="form-control" required />
+                                    <input id="email" maxlength="80" name="email" size="20" type="text" placeholder="Адрес электронной почты" class="form-control" required />
+                                    <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="Номер телефона" class="form-control" required />
+                                    <input id="company" maxlength="40" name="company" size="20" type="text" placeholder="Название компании" class="form-control" />
+                                </div>
+                                <div class="col-md-6 col-sm-6 column">
+                                    <textarea id="description" name="message" cols="30" rows="6" placeholder="Краткое описание проекта" class="form-control" required/ ></textarea>
+                                    <input id="budget" name="budget" type="text" size="30" placeholder="Бюджет проекта" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <select class="selectpicker form-control" name="orders[]" multiple="multiple" style="color: #f1c40f; font-weight: bold;">
+                                    <option selected disabled hidden style="color: #f1c40f;font-weight: bold;">Мне нужна помощь:</option>
+                                    <option value="1">Редизайн моего сайта</option>
+                                    <option value="2">Новый веб-сайт</option>
+                                    <option value="3">Электронная торговля</option>
+                                    <option value="4">Мобильное приложение</option>
+                                    <option value="5">Брендинг</option>
+                                    <option value="6">Маркетинг</option>
+                                    <option value="7">Поддержка</option>
+                                    <option value="8">Другие</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 text-center">
+                                <center><button id="contactSubmit" type="submit" name="submit">Отправить</button></center>
+                            </div>
+                            <div style="text-align: center; color: #f1c40f;" class="form-error"></div>
+                        </form>
+                    </center>
+                </div>
+            </div>
         </div>
-    </div>
     <div class="row">
         <div class="heading">
             <h2>Наш офис</h2>

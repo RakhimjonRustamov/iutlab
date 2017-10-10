@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin</title>
     <!-- Styles -->
+    <link rel="shortcut icon" href="{{ asset('images/img/Marck-Design-Logo.png')}}" type="image/png">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
 </head>

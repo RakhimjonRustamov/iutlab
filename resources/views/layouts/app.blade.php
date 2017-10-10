@@ -25,8 +25,6 @@
 
         @yield('scripts')
 
-
-
 </head>
 <body data-controller="portfolio" >
 

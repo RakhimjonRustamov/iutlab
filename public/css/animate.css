@@ -345,7 +345,7 @@
 .bounceIn {
   animation-name: bounceIn;
   animation-duration: 2s;
-  animation-delay: 0.5s;
+  animation-delay: 0.1s;
 }
 
 @keyframes bounceInDown {
@@ -378,6 +378,7 @@
 
 .bounceInDown {
   animation-name: bounceInDown;
+  animation-duration: 1s;
 }
 
 @keyframes bounceInLeft {
@@ -476,6 +477,7 @@
 
 .bounceInUp {
   animation-name: bounceInUp;
+  animation-duration: 1s;
 }
 
 @keyframes bounceOut {
@@ -532,6 +534,7 @@
 
 .bounceOutLeft {
   animation-name: bounceOutLeft;
+  animation-duration: 2s;
 }
 
 @keyframes bounceOutRight {
@@ -598,6 +601,7 @@
 
 .fadeInDown {
   animation-name: fadeInDown;
+  animation-duration: 1s;
 }
 
 @keyframes fadeInDownBig {
@@ -663,6 +667,7 @@
 
 .fadeInRight {
   animation-name: fadeInRight;
+  animation-duration: 1s;
 }
 
 @keyframes fadeInRightBig {
@@ -695,6 +700,7 @@
 
 .fadeInUp {
   animation-name: fadeInUp;
+  animation-duration: 1s;
 }
 
 @keyframes fadeInUpBig {

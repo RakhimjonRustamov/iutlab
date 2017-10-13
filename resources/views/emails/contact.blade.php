@@ -1,36 +1,43 @@
-<h1>Hello new things</h1>
-<h2>O proekte: {{$bodyMessage}}</h2>
-{{$company}}
-{{$full_name}}
-{{$phone}}
-{{$budget}}
+<h1>Новый проект</h1><br>
+<h3>Краткое описание проекта: {{$bodyMessage}}</h3>
+<h3>Название компании: {{$company}}</h3>
+<h3>Имя: {{$full_name}}</h3>
+<h3>Номер телефона: {{$phone}}</h3>
+<h3>Бюджет проекта: {{$budget}}</h3>
 <br>
 @foreach($orders as $order)
     @switch($num =(int)$order)
         @case(1)
-        1 input is empty!
+        <br>
+        Редизайн моего сайта
         @break
         @case(2)
-        2 input is empty!
         <br>
+        Новый веб-сайт
         @break
         @case(3)
-        3 input is empty!
+        <br>
+        Электронная торговля
         @break
         @case(4)
-        4 input is empty!
+        <br>
+        Мобильное приложение
         @break
         @case(5)
-        5 input is empty!
+        <br>
+        Брендинг
         @break
         @case(6)
-        6 input is empty!
+        <br>
+        Маркетинг
         @break
         @case(7)
-        7 input is empty!
+        <br>
+        Поддержка
         @break
         @case(8)
-        8 input is empty!
+        <br>
+        Другие
         @break
     @endswitch
 @endforeach

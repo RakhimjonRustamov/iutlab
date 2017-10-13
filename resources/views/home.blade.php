@@ -178,4 +178,42 @@
             }
         });
     </script>
+    <script type="text/javascript">
+        $(function(){
+            setTimeout(function(){
+                var timer, fullText, currentOffset, onComplete;
+
+                function Speak(text, callback) {
+                    fullText = text;
+                    currentOffset = 0;
+                    onComplete = callback;
+                    timer = setInterval(onTick, 60);
+                }
+
+                function onTick() {
+                    currentOffset++;
+                    if (currentOffset == fullText.length) {
+                        complete();
+                        return;
+                    }
+                    var text = fullText.substring(0, currentOffset);
+                    $("#message").html(text);
+                }
+
+                function complete() {
+                    clearInterval(timer);
+                    timer = null;
+                    $("#message").html(fullText);
+                    onComplete();
+                }
+
+                $(".box").click(function () {
+                    complete();
+                });
+
+                Speak("Мотивированные студенты, которые делают мир лучше, создавая удивительные приложения и красивые сайты."
+                );
+            },1000);
+        });
+    </script>
 @endsection

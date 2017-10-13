@@ -1,7 +1,13 @@
 @extends('layouts.app')
 @section('title', 'Contact Us')
 @section('stylesheets')
-
+    <style type="text/css">
+        .container-fluid {
+            width: 100%;
+            background-size: 400% 400%;
+            animation: Gradient 20s ease infinite;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -51,7 +57,7 @@
                                     <input id="company" maxlength="40" name="company" size="20" type="text" placeholder="Название компании" class="form-control" />
                                 </div>
                                 <div class="col-md-6 col-sm-6 column">
-                                    <textarea id="description" name="message" cols="30" rows="6" placeholder="Краткое описание проекта" class="form-control" required/ ></textarea>
+                                    <textarea id="description" name="message" cols="30" rows="6" placeholder="Краткое описание проекта" class="form-control" required/></textarea>
                                     <input id="budget" name="budget" type="text" size="30" placeholder="Бюджет проекта" class="form-control" required />
                                 </div>
                             </div>

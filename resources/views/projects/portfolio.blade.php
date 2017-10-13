@@ -25,7 +25,7 @@
         <div id="works-wrap">
             <div id="works">
                 @foreach($projects as $project)
-                <a class="work work1" href="#1" name="yuridik" data-id="1">
+                <a class="work work1" href="http://{{ $project->link  }}" name="yuridik" data-id="1">
                     <span style="">{{$project->link}}</span>
                     <div class="work-overlay"></div>
                     <img alt="" src="{{asset('images/img/work/'. $project->image)}}"/>

@@ -1,18 +1,10 @@
 <?php
 
 // Index Page
-Route::get('contact', 'PagesController@getContact'); //
+Route::get('contact', 'PagesController@getContact');
 Route::post('contact', 'PagesController@postContact')->name('contact'); //
-Route::get('service', 'PagesController@getService')->name('pages.service');
+Route::get('services', 'PagesController@getService')->name('pages.service');
 Route::get('projects', 'ProjectController@getProjects')->name('projects');
-
-// Language set up
-Route::get('setlocale/{locale}', function($locale){
-    if(in_array($locale, \Config::get('app.locales')))
-        return redirect()->back()->withCookie(cookie()->forever('language', $locale));
-    else
-        return redirect()->back();
-})->name('lang.switch');
 
 //blog posts
 Route::resource('admin/posts', 'PostController');

@@ -7,19 +7,26 @@
 		plugins: 'image imagetools link'
 	});
 	</script> -->
+@section('stylesheets')
+
+@endsection
+@section('scripts')
+
+@endsection
+
 @section('content')
 @include('partials._message')
  <div class="row">
- 		{!! Form::model($post, ['route'=> ['posts.update', $post->id], 'method'=>'PUT'])!!}
+ 		{!! Form::model($post, ['route'=> ['posts.update', $post->id], 'method'=>'PUT',] )!!}
     	<div class="col-md-8">
     			{{ Form::label('title', 'Title:')}}
-    			{{ Form::text('title', null, ['class'=>'form-control'])}}
+    			{{ Form::text('title', null, ['class'=>'form-control', 'required'=>''])}}
     			{{ Form::label('slug', 'Slug:') }}
 				{{ Form::text('slug', null, array('class'=>'form-control', 'required'=>'', 'minlength'=>'5', 'maxlength'=>'100')) }}
-			     <label name="featured_image" style="margin-top:10px"> Upload New Image</label>
+			     <label name="featured_image" style="margin-top:10px"  > Upload New Image</label>
 			     <input type="file" name="featured_image">
 					{{ Form::label('body', 'Body:')}}
-  				{{ Form::textarea('body', null, ['class'=>'form-control'])}}
+  				{{ Form::textarea('body', null, ['class'=>'form-control', 'required'=>''])}}
     	</div>
 		
 		<div class="col-md-4">

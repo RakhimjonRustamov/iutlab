@@ -18,12 +18,12 @@
 				<label>Title:</label>
 			    <input type="text" name="title" class="form-control">
 				<label>Slug:</label>
-				<input type="text" name="slug" class="form-control" required="required">	
+				<input type="text" name="slug" class="form-control" required="required">
 				<label>Upload Featured Image:</label>
 				<input type="file" name="featured_image" class="form-control">
 				<label>Body Post:</label>
 				<textarea name="body" class="form-control" placeholder="Enter Post Content"></textarea>
-				<button type="submit" row="15" class="btn btn-success btn-block">Create New Post</button>
+				<button type="submit" row="15" class="btn btn-success btn-block" >Create New Post</button>
 		    </form>
 	</div>
 </div>

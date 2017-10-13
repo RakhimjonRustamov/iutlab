@@ -7,20 +7,38 @@
     <style>
         .example-slider .fnc-slide-1 .fnc-slide__inner,
         .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
+            @if(!empty($posts[0]))
             background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/{{$posts[0]->image}}");
-        }
+            @else
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/wallpaper2.jpg");
+            @endif
+}
         .example-slider .fnc-slide-2 .fnc-slide__inner,
         .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-            background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/{{$posts[1]->image}}");
-        }
+
+            @if(!empty($posts[1]))
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/{{$posts[1]->image}}");
+            @else
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/wallpaper2.jpg");
+            @endif
+
+}
         .example-slider .fnc-slide-3 .fnc-slide__inner,
         .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
+            @if(!empty($posts[2]))
             background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/{{$posts[2]->image}}");
-        }
+            @else
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/wallpaper2.jpg");
+            @endif
+}
         .example-slider .fnc-slide-4 .fnc-slide__inner,
         .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
+            @if(!empty($posts[3]))
             background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/{{$posts[3]->image}}");
-        }
+            @else
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("images/img/blog/wallpaper2.jpg");
+            @endif
+}
     </style>
 @endsection
 @section('scripts')
@@ -41,10 +59,20 @@
                         <div class="fnc-slide__content">
                             <h2 class="fnc-slide__heading">
                                 <div class="fnc-slide__heading-line">
-                                    {{$posts[0]->title}}
+                                   @if(!empty($posts[0]))
+                                   {{$posts[0]->title}}
+                                    @else
+                                    Hello this is all
+                                    @endif
                                 </div>
                             </h2>
-                            <p class="fnc-slide__paragraph">{{$posts[0]->body}}</div>
+                            <p class="fnc-slide__paragraph">
+                                @if(!empty($posts[0]))
+                                    {{$posts[0]->body}}
+                                @else
+                                 Body and the thing
+                                 @endif
+                        </div>
                     </div>
 
                 </div>
@@ -59,10 +87,20 @@
                         <div class="fnc-slide__content">
                             <h2 class="fnc-slide__heading">
                                 <div class="fnc-slide__heading-line">
-                                    {{$posts[1]->title}}
+                                    @if(!empty($posts[1]))
+                                        {{$posts[1]->title}}
+                                    @else
+                                        Hello this is all
+                                    @endif
                                 </div>
                             </h2>
-                            <p class="fnc-slide__paragraph">{{$posts[1]->body}}</div>
+                            <p class="fnc-slide__paragraph">
+                                @if(!empty($posts[1]))
+                                    {{$posts[1]->body}}
+                                @else
+                                    Body and the thing
+                                @endif
+                        </div>
 
                     </div>
                 </div>
@@ -76,10 +114,20 @@
                         <div class="fnc-slide__content">
                             <h2 class="fnc-slide__heading">
                                 <div class="fnc-slide__heading-line">
-                                    {{$posts[2]->title}}
+                                    @if(!empty($posts[2]))
+                                        {{$posts[2]->title}}
+                                    @else
+                                        Hello this is all
+                                    @endif
                                 </div>
                             </h2>
-                            <p class="fnc-slide__paragraph">{{$posts[2]->body}}</div>
+                            <p class="fnc-slide__paragraph">
+                                @if(!empty($posts[2]))
+                                    {{$posts[2]->body}}
+                                @else
+                                    Body and the thing
+                                @endif
+                        </div>
                     </div>
                 </div>
                 <!-- slide end -->
@@ -92,10 +140,20 @@
                         <div class="fnc-slide__content">
                             <h2 class="fnc-slide__heading">
                                 <div class="fnc-slide__heading-line">
-                                    {{$posts[3]->title}}
+                                    @if(!empty($posts[3]))
+                                        {{$posts[3]->title}}
+                                    @else
+                                        Hello this is all
+                                    @endif
                                 </div>
                             </h2>
-                            <p class="fnc-slide__paragraph">{{$posts[3]->body}}</div>
+                            <p class="fnc-slide__paragraph">
+                                @if(!empty($posts[3]))
+                                    {{$posts[3]->body}}
+                                @else
+                                    Body and the thing
+                                @endif
+                        </div>
                     </div>
                 </div>
                 <!-- slide end -->

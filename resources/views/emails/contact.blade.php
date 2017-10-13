@@ -1,5 +1,9 @@
 <h1>Hello new things</h1>
-{{$bodyMessage}}
+<h2>O proekte: {{$bodyMessage}}</h2>
+{{$company}}
+{{$full_name}}
+{{$phone}}
+{{$budget}}
 <br>
 @foreach($orders as $order)
     @switch($num =(int)$order)
@@ -8,6 +12,7 @@
         @break
         @case(2)
         2 input is empty!
+        <br>
         @break
         @case(3)
         3 input is empty!

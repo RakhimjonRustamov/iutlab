@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Post;
 use Session;
@@ -7,7 +6,7 @@ use Mail;
 use Illuminate\Http\Request;
 class PagesController extends Controller
 {
-   public function getContact(){
+    public function getContact(){
  		return view('pages.contact');
 	}
 
@@ -15,7 +14,7 @@ class PagesController extends Controller
         return view('pages.service');
     }
 
-   public function postContact(Request $request){
+    public function postContact(Request $request){
             $this->validate($request, array(
                 'full_name'=>'required|max:120',
                 'email'=>'required|email',
@@ -31,19 +30,17 @@ class PagesController extends Controller
                 'phone'=>$request->phone,
                 'company'=>$request->company,
                 'bodyMessage'=>$request->message,
-                'orders'=>$request->orders
+                'orders'=>$request->orders,
+                'budget'=>$request->budget
             );
 
-         //   \Mail::to($data)->send(new Message);
-
-
-       Mail::send('emails.contact', $data, function($message)use ($data){
-           $message->from($data['email']);
-           $message->to('rakhimjon.rustamov@gmail.com');
-           $message->subject($data['bodyMessage']);
-       });
-       Session::flash('success', 'Your mail is sent');
-       return redirect(route('home'));
+               Mail::send('emails.contact', $data, function($message)use ($data){
+                   $message->from($data['email']);
+                   $message->to('sardorallaberganov96@gmail.com');
+                   $message->subject($data['bodyMessage']);
+               });
+               Session::flash('success', '  ваше письмо успешно отправлено');
+               return redirect(route('contact'));
 	}
 
 }

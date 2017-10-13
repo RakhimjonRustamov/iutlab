@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Post;
 use Session;
@@ -49,25 +48,30 @@ class PostController extends Controller
         'featured_image'=>'required|mimes:jpg,jpeg,png,svg|max:8192'
         ));
 
-       $post = new Post;
-       $post->title=$request->title;    
-       $post->slug=$request->slug;
-       $post->body=$request->body;
+           $post = new Post;
+           $post->title=$request->title;
+           $post->slug=$request->slug;
+           $post->body=$request->body;
 
-        // image upload to website 
+            // image upload to website
 
-       if($request->hasFile('featured_image')){
-        $image=$request->file('featured_image');
-        $filename=time().'.'.$image->getClientOriginalExtension();
-        $location=public_path('images/img/blog/'. $filename);
-        Image::make($image)->resize(800,400)->save($location);
-        $post->image=$filename;
-       }
+           if($request->hasFile('featured_image')){
+            $image=$request->file('featured_image');
+            $filename=time().'.'.$image->getClientOriginalExtension();
+            $location=public_path('images/img/blog/'. $filename);
+            Image::make($image)->resize(800,400)->save($location);
+            $post->image=$filename;
+           }
+           $post->save();
+           Session::flash('success', 'The post was successfully saved');
+           return redirect()->route('posts.index');
+    }
 
-       $post->save();
+    public function edit($id)
+    {
+        $post=Post::find($id);
+        return view('posts.edit')->withPost($post);
 
-       Session::flash('success', 'The post was successfully saved');
-       return redirect()->route('posts.index');
     }
 
     /**
@@ -76,14 +80,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-         $post=Post::find($id);
-         return view('posts.edit')->withPost($post);
-        
-    }
-
     /**
+
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -92,7 +90,6 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-
          $this->validate($request, array(
             'title'=>'required|max:160', 
             'slug'=>'required|alpha_dash|min:5|max:100|unique:posts,slug,'.$id, 
@@ -100,27 +97,25 @@ class PostController extends Controller
             'featured_image'=> 'required|mimes:jpeg,png,jpg,gif,svg'
             ));
           // Save the data to the database 
-        $post=Post::find($id);
-        $post->title=$request->input('title');
-        $post->slug=$request->input('slug');
-        $post->body=$request->body;
+            $post=Post::find($id);
+            $post->title=$request->input('title');
+            $post->slug=$request->input('slug');
+            $post->body=$request->body;
 
-       if($request->hasFile('featured_image')){
-            // add the new photos
-        $image=$request->file('featured_image');
-        $filename=time().'.'.$image->getClientOriginalExtension();
-        $location=public_path('images/img/blog/'. $filename);
-        Image::make($image)->resize(800,400)->save($location);
-        $oldFileName=$post->image;
-          // update the database   
-        $post->image=$filename;  
+           if($request->hasFile('featured_image')){
+                // add the new photos
+            $image=$request->file('featured_image');
+            $filename=time().'.'.$image->getClientOriginalExtension();
+            $location=public_path('images/img/blog/'. $filename);
+            Image::make($image)->resize(800,400)->save($location);
+            $oldFileName='img/blog/'.$post->image;
+              // update the database
+            $post->image=$filename;
 
-        Storage::delete($oldFileName);        
+            Storage::delete($oldFileName);
 
        }
-
         $post->save();
-
         Session::flash('success', 'The post was successfully updated');
         return redirect()->route('posts.index');
     }
@@ -134,7 +129,8 @@ class PostController extends Controller
     public function destroy($id)
     {
        $post=Post::find($id);
-       Storage::delete($post->image);
+       $photo ='img/blog/'.$post->image;
+       Storage::delete($photo);
        $post->delete();
        Session::flash('success', "The post was successfully deleted");
        return redirect()->route('posts.index');

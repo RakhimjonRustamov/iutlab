@@ -5,25 +5,65 @@ body
 	padding: 0;
 	background: #fff;
 	width: 100%!important;
-	font-family: Moscow!important;
+	font-family: open sans!important;
 	overflow-x: hidden;
 }
 /*Font*/
 /*@font-face {
-    font-family: Moscow;
+    font-family: open sans;
     src: url(data/fonts/2211.ttf);
 }*/
 
 @font-face {
-    font-family: Moscow;
-    src: url("../fonts/Moscow.ttf");
+    font-family: open sans;
+    src: url("../fonts/open sans.ttf");
 }
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
 /*Navbar elements*/
+
+
+
 .navbar
 {
 	background:#fff;
 	position:fixed!important;
-	font-family: "Moscow"!important;
+	font-family: "open sans"!important;
 	margin: 0!important;
 	height: 80px;	
 	z-index: 200;
@@ -38,7 +78,7 @@ body
 {
 	background: none!important;
 	color: black!important;
-	font: 17px/34px moscow; 
+	font: 17px/34px open sans; 
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -73,13 +113,19 @@ h1
 }
 
 /*main page sections*/
-
 .section img{width: 60%;background-position: center;padding-top: 2%;}
-#section0{background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../images/img/wallpaper-main.jpg") center center;background-size: cover;}
+.section0-head{width: 30%!important;}
+.section0-anim{color: black!important; text-shadow: 0 0 10px grey; font-weight: bold;}
+#section0{
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/img/img-1.jpg");
+	background-repeat: no-repeat;
+	background-size: 300% 300%;
+	animation: Gradient 105s ease infinite!important;
+}
 #section1{background: #B22222 url("../images/img/pattern.png") repeat;}
-#section2{background: #2E7D32 url("../images/img/pattern.png") repeat;}
+#section2{background: #006866 url("../images/img/pattern.png") repeat;}
 #section3{background: #FFC400 url("../images/img/pattern.png") repeat;}
-#section3 img{width: 45%;}
+#section4{background: #bac703 url("../images/img/pattern.png") repeat;}
 
 /*hr style*/
 hr { width: 35%;height: 30px; border-style: solid;border-color: #fff;border-width: 2px 0 0 0;border-radius: 20px;} 
@@ -104,7 +150,7 @@ hr:before {display: block;content: "";height: 30px;margin-top: -31px;border-styl
 }
 .about-section center
 {
-	font-family: moscow;
+	font-family: open sans;
 	position: relative;
 	top: 45%;
 	transform: translateY(-50%);
@@ -124,19 +170,19 @@ hr:before {display: block;content: "";height: 30px;margin-top: -31px;border-styl
 .overlay .closebtn {position: absolute;bottom: 20%;left: 50%;transform: translateX(-50%);font-size: 90px;}
 
 /*request form styles*/
-.forkit{position:fixed;right:-30px;top:0;z-index:99998;width:190px;height:70px;font-family:moscow;text-decoration:none!important;}
+.forkit{position:fixed;right:-30px;top:0;z-index:99998;width:190px;height:70px;font-family:open sans;text-decoration:none!important;}
 .forkit .tag{display:block;cursor:pointer;color:#000;background:#f1c40f;text-align:center;font-size:12px;font-weight:700;line-height:25px;box-shadow:0 0 10px rgba(0,0,0,.4);-webkit-transform-origin:15px 0;transform-origin:15px 0;text-transform:uppercase;}
 .forkit .tag:after{content:'';display:block;position:absolute;top:0;left:0;height:19px;width:184px;margin:2px;border:1px dotted #AF9014;}
 .forkit .string{display:block;height:1px;width:0;position:absolute;background:rgba(255,255,255,.7);box-shadow:0 0 10px rgba(0,0,0,.4);-webkit-transform-origin:0 0;transform-origin: 0 0;}
 #request_form{position:fixed;width:100%;height:100%;background:black;-ms-filter:"alpha(Opacity=80)";filter:alpha(opacity=80);z-index:9999;left:0;right:0;top:0;bottom:0;overflow-y:auto;display:none;}
 #request_form .close-button{position:absolute;width:32px;height:32px;right:10px;top:10px;cursor:pointer;}
 #request_form .close-button .fa{color:#F1C40F;font-size:35px;}
-#request_form .title{font:44px/44px Moscow;color:#fff;margin-bottom:30px;text-align:center;}
+#request_form .title{font:44px/44px open sans;color:#fff;margin-bottom:30px;text-align:center;}
 #request_form .title span{color:#f1c40f;}
 .top-info h1 {
 	margin-top: 80px;
 	margin-bottom: 80px;
-	font: 80px/80px moscow!important;
+	font: 80px/80px open sans!important;
     color: #f1c40f!important;
     text-transform: capitalize!important;
     position: relative!important;
@@ -152,7 +198,7 @@ hr:before {display: block;content: "";height: 30px;margin-top: -31px;border-styl
 	font-weight: bold;
 }
 .contact-form-heading{
-	font: 80px/80px moscow!important;
+	font: 80px/80px open sans!important;
     color: #f1c40f;
     text-align: center;
     margin-bottom: 70px;
@@ -196,7 +242,7 @@ address{text-align: center; color: white; font-size: 24px;margin-top: 20px;margi
 #footer ul.social.footer li{display:inline-block;zoom:1;*display:inline}
 #footer ul.social.footer li a{text-decoration: none; width:40px;height:40px;line-height:40px;margin:0 3px;text-align:center;display:block;color:#000}
 #footer ul.social.footer li a:hover{background:url(../images/img/footer-social.png) no-repeat}
-#footer .bd-footer{width:98%;margin:0 auto;text-align:center;padding:0 1%;font:18px/18px moscow;color:#000}
+#footer .bd-footer{width:98%;margin:0 auto;text-align:center;padding:0 1%;font:18px/18px open sans;color:#000}
 #footer .bd-footer .sep{display:block}
 #footer .bd-footer ul{margin:20px 0 0;padding:0}
 #footer .bd-footer ul li{display:inline-block;zoom:1;*display:inline}

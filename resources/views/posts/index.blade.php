@@ -54,7 +54,6 @@
         </div>
         <div class="modal-body">
           {!! Form::model($post, ['route'=> ['posts.update', $post->id], 'method'=>'PUT', 'files'=>true])!!}
-    	
     			{{ Form::label('title', 'Title:')}}
     			{{ Form::text('title', null, ['class'=>'form-control'])}}
     			{{ Form::label('slug', 'Slug:') }}

@@ -33,7 +33,6 @@
     <div class="overlay-content">
         <a href="{{url('projects')}}">Последние проекты</a>
         <a href="{{route('pages.service')}}">Сервисы</a>
-        <a href="{{url('about')}}">О нас</a>
         <a href="{{url('contact')}}">Свяжитесь с нами</a>
         <a href="{{url('blog')}}">Блог</a>
     </div>
@@ -51,7 +50,6 @@
             <ul class="nav navbar-nav navbar-right" style="color:white;">
                 <li class="active"><a href="{{url('projects')}}">Последние проекты</a></li>
                 <li><a href="{{route('pages.service')}}">Сервисы</a></li>
-                <li><a href="{{url('about')}}">О нас</a></li>
                 <li><a href="{{url('contact')}}">Свяжитесь с нами</a></li>
                 <li><a href="{{url('blog')}}">Блог</a></li>
             </ul>
@@ -79,7 +77,8 @@
         <div lang="en-US" dir="ltr">
             <div class="col-md-6 col-md-offset-3">
                 <div id="contact-form" style="position: relative;">
-                    <center><form method="POST" name="myForm">
+                    <center><form action="{{route('contact')}}" method="POST" name="myForm" >
+                            {{csrf_field()}}
                             <div class="row" style="padding-bottom: 65px;">
                                 <div class="col-md-6 col-sm-6 column" style="margin-right: 0!important;">
                                     <input id="full_name" maxlength="40" name="full_name" size="20" type="text" placeholder="Ваше имя" class="form-control" required />
@@ -88,12 +87,12 @@
                                     <input id="company" maxlength="40" name="company" size="20" type="text" placeholder="Название компании" class="form-control" />
                                 </div>
                                 <div class="col-md-6 col-sm-6 column">
-                                    <textarea id="description" name="description" cols="30" rows="6" placeholder="Краткое описание проекта" class="form-control" required/ ></textarea>
+                                    <textarea id="description" name="message" cols="30" rows="6" placeholder="Краткое описание проекта" class="form-control" required/ ></textarea>
                                     <input id="budget" name="budget" type="text" size="30" placeholder="Бюджет проекта" class="form-control" required />
                                 </div>
                             </div>
                             <div class="row" style="margin-left: 0!important; margin-right: 0!important;">
-                                <select class="selectpicker form-control" multiple data-max-options="8" style="color: #f1c40f; font-weight: bold;">
+                                <select class="selectpicker form-control"name="orders[]" multiple="multiple"  style="color: #f1c40f; font-weight: bold;">
                                     <option selected disabled hidden style="color: #f1c40f;font-weight: bold;">Мне нужна помощь:</option>
                                     <option value="1">Редизайн моего сайта</option>
                                     <option value="2">Новый веб-сайт</option>

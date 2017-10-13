@@ -4,13 +4,9 @@
 
 @endsection
 
-@section('scripts')
-    {{--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>--}}
-@endsection
-
 @section('content')
 
-    <div class="container-fluid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/img/contact-bg.jpg'); background-position: center; background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/img/iut.jpg'); background-position: center; background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
 
     <div class="row top-animate">
         <div class="top-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -21,7 +17,7 @@
             <center>
                 <div class="col-md-3">
                     <h2>Начните проект</h2>
-                    <p>Ташкент: (998) 289-9999</a></p>
+                    <p>Ташкент: (998) 289-9999</p>
                 </div>
                 <div class="col-md-3">
                     <h2>Запросы средств массовой информации</h2>
@@ -60,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <select class="selectpicker form-control" name="orders[]" multiple="multiple" style="color: #f1c40f; font-weight: bold;">
+                                <select class="selectpicker form-control" name="orders[]" multiple="multiple" style="color: #f1c40f; font-weight: bold;" required="required">
                                     <option selected disabled hidden style="color: #f1c40f;font-weight: bold;">Мне нужна помощь:</option>
                                     <option value="1">Редизайн моего сайта</option>
                                     <option value="2">Новый веб-сайт</option>
@@ -87,7 +83,7 @@
             <h3>Ташекент</h3>
         </div>
         <center>
-            <div class="map" id="map" style="width:680px;height:480px;"></div>
+            <img class="map" src="{{asset('images//img/map.jpg')}}">
         </center><br>
         <div>
             <address>

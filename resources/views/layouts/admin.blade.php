@@ -11,6 +11,9 @@
     <link rel="shortcut icon" href="{{ asset('images/img/Marck-Design-Logo.png')}}" type="image/png">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
+    @yield('stylesheets')
+    @yield('scripts')
+
 </head>
 <body  style="background-color:#e6e6ff;">
 <div class="container-fluid">

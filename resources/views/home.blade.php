@@ -1,19 +1,25 @@
 @extends('layouts.app')
 @section('title', 'IutLab Home')
 @section('stylesheets')
-
     <style type="text/css">
-        .menu-btn{color:white;}
+        .menu-btn{color:black;}
         .navbar-nav>li>a{color: white!important;}
         .navbar-brand{color:white!important;}
-        .navbar{background: none;}
+        .navbar{background: none!important;}
         .navbar-nav>li>a:hover{color: white!important;}
-        /*.navbar{background: linear-gradient(rgba(0,0,0,0.8), rgba(10,60,30,0));}*/
         #section0 h1{
-            padding: 250px 0;
+            padding: 250px 0 10px 0;
             text-align: center!important;
             font-family: Brush Script MT;
-            font-size: 150px;
+        }
+        .section0-head,.section1-img,.section2-img,.section3-img,.section4-img{
+            margin-top: 70px!important;
+            width: 20%;
+        }
+        .section0-anim,.section1-anim,.section2-anim,.section3-anim{
+            margin: 20px 0 0 0!important;
+            color: white;
+            width: 70%!important;
         }
         .button {
             position: absolute;
@@ -25,7 +31,7 @@
             text-decoration: none!important;
             border: 1px solid #fff;
             background: #000;
-            font-family: Moscow;
+            font-family: open sans;
             color: #fff;
             font-size: 16px;
             border-radius: 22px;
@@ -41,129 +47,135 @@
             outline-width: 0;
             color: white;
         }
-    </style>
-    <style type="text/css">
-        .text-animation
-        {
-            width: 100%;
-            list-style: none;
-            position: relative;
-            left: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .text-animation li.anim{
-            display: inline-block;
-            margin-right: 5px;
-            font-weight: 300;
-            font-family: Brush Script MT;
-            font-size: 10em;
-            color: #fff;
-            opacity: 1;
-            transition: all 2s ease;
-        }
-        .text-animation li.anim:last-child{
-            margin-right: 0;
-        }
-        .text-animation li:nth-child(1){color:blue;}
-        .text-animation li:nth-child(2){color:blue;}
-        .text-animation li:nth-child(8){color:yellow;}
-        .text-animation li:nth-child(9){color:yellow;}
-        .text-animation li:nth-child(10){color:yellow;}
-        .text-animation li:nth-child(11){color:yellow;}
-        .text-animation li:nth-child(12){color:yellow;}
-        .text-animation li:nth-child(13){color:yellow;}
-        .text-animation li:nth-child(14){color:yellow;}
-        .text-animation li:nth-child(15){color:yellow;}
-        .text-animation .hidden1{
-            opacity: 0;
-        }
-        .text-animation.hidden1 li.anim:nth-child(1){ transform: translateX(-300px) translateY(-110px);}
-        .text-animation.hidden1 li.anim:nth-child(2){ transform: translateX(-190px) translateY(100px);}
-        .text-animation.hidden1 li.anim:nth-child(3){ transform: translateX(-180px) translateY(30px);}
-        .text-animation.hidden1 li.anim:nth-child(4){ transform: translateX(-250px) translateY(-120px);}
-        .text-animation.hidden1 li.anim:nth-child(5){ transform: translateX(-195px) translateY(80px);}
-        .text-animation.hidden1 li.anim:nth-child(6){ transform: translateX(60px) translateY(70px);}
-        .text-animation.hidden1 li.anim:nth-child(7){ transform: translateX(30px) translateY(-90px);}
-        .text-animation.hidden1 li.anim:nth-child(8){ transform: translateX(-80px) translateY(-130px);}
-        .text-animation.hidden1 li.anim:nth-child(9){ transform: translateX(89px) translateY(40px);}
-        .text-animation.hidden1 li.anim:nth-child(10){ transform: translateX(-238px) translateY(-66px);}
-        .text-animation.hidden1 li.anim:nth-child(11){ transform: translateX(190px) translateY(90px);}
-        .text-animation.hidden1 li.anim:nth-child(12){ transform: translateX(60px) translateY(100px);}
-        .text-animation.hidden1 li.anim:nth-child(13){ transform: translateX(-90px) translateY(-190px);}
-        .text-animation.hidden1 li.anim:nth-child(14){ transform: translateX(-50px) translateY(-165px);}
-        .text-animation.hidden1 li.anim:nth-child(15){ transform: translateX(300px) translateY(-20px);}
-    </style>
-    <style type="text/css">
-        @media (max-width: 900px){
-            .navbar{background: none!important;}
-            .navbar-toggle .icon-bar{background-color: white!important; margin-right: 150px!important;width: 30px; height: 3px; margin: 5px 0;}
-            #myNavbar {background: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6))!important;color:black!important;}
-            .navbar-nav>li>a{color: black!important;}
-        }
+        div#text { width: 0px; height: 2em; white-space: nowrap; overflow: hidden;  }
     </style>
 
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{asset('js/jquery.fullPage.js')}}"></script>
+                <script type="text/javascript" src="{{asset('js/jquery.fullPage.js')}}"></script>
 
-    <!-- fullpage script -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#fullpage').fullpage();
-        });
-    </script>
+                <!-- fullpage script -->
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#fullpage').fullpage();
+                    });
+                </script>
 
 
-    <!-- text animation -->
-    <script type="text/javascript">
-        $(function(){
-            setTimeout(function(){
-                $(".text-animation").removeClass("hidden1");
-            }, 1200);
-        });
-    </script>
 
 @endsection
-
 @section('content')
     <div id="fullpage">
         <!-- section 0 -->
         <div class="section" id="section0">
-            <ul class="text-animation hidden1" align="center">
-                <li class="anim">W</li>
-                <li class="anim">e</li>
-                <li class="anim"></li>
-                <li class="anim">A</li>
-                <li class="anim">r</li>
-                <li class="anim">e</li>
-                <li class="anim"></li>
-                <li class="anim">C</li>
-                <li class="anim">r</li>
-                <li class="anim">e</li>
-                <li class="anim">a</li>
-                <li class="anim">t</li>
-                <li class="anim">i</li>
-                <li class="anim">v</li>
-                <li class="anim">e</li>
-            </ul>
-            </ul>
+            <center>
+                <div class="row">
+                    <img class="section0-head" src="{{asset('images/img/logo.png')}}" />
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <div id="message"></div>
+                    </div>
+
+                </div>
+            </center>
         </div>
         <!-- section 1 -->
 
         <div class="section" id="section1">
-            <center><img class="section1" style="padding: 170px 0;" src="{{asset('images/img/main1.png')}}"></center>
+            <center>
+                <div class="row">
+                    <img class="section1-img" src="{{asset('images/img/main/section1.svg')}}">
+                </div>
+                <div class="row">
+                    <h3 class="section1-anim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula, ante sit amet faucibus accumsan, orci ligula fermentum urna, a efficitur ex libero eu nisl. Integer vulputate egestas nisi, at fermentum ligula accumsan in. Integer et ipsum at neque rhoncus ultricies. Phasellus velit leo, bibendum non magna eget, vestibulum consequat turpis. Phasellus eu volutpat magna, ultricies varius nibh. Proin efficitur porttitor massa eu dapibus. Donec sit amet tortor vitae dolor facilisis viverra. Quisque at fringilla lectus. Nunc vel sodales arcu, venenatis varius ipsum. Vivamus scelerisque nibh et suscipit commodo. Morbi quis augue id purus convallis luctus.</h3>
+                </div>
+            </center>
         </div>
 
         <!-- section 2 -->
         <div class="section" id="section2">
-            <center><h1>index</h1><img class="section2" src="{{asset('images/img/main2.png')}}"></center>
+            <center>
+                <div class="row">
+                    <img class="section2-img" src="{{asset('images/img/main/section2.svg')}}">
+                </div>
+                <div class="row">
+                    <h3 class="section2-anim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula, ante sit amet faucibus accumsan, orci ligula fermentum urna, a efficitur ex libero eu nisl. Integer vulputate egestas nisi, at fermentum ligula accumsan in. Integer et ipsum at neque rhoncus ultricies. Phasellus velit leo, bibendum non magna eget, vestibulum consequat turpis. Phasellus eu volutpat magna, ultricies varius nibh. Proin efficitur porttitor massa eu dapibus. Donec sit amet tortor vitae dolor facilisis viverra. Quisque at fringilla lectus. Nunc vel sodales arcu, venenatis varius ipsum. Vivamus scelerisque nibh et suscipit commodo. Morbi quis augue id purus convallis luctus.</h3>
+                </div>
+            </center>
         </div>
 
         <!--section 3 -->
         <div class="section" id="section3">
-            <center><h1>Fully <font color="">responsive</font> websites</h1><img class="section3" src="{{asset('images/img/responsive.png')}}"></center>
+            <center>
+                <div class="row">
+                    <img class="section3-img" src="{{asset('images/img/main/section3.svg')}}">
+                </div>
+                <div class="row">
+                    <h3 class="section3-anim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula, ante sit amet faucibus accumsan, orci ligula fermentum urna, a efficitur ex libero eu nisl. Integer vulputate egestas nisi, at fermentum ligula accumsan in. Integer et ipsum at neque rhoncus ultricies. Phasellus velit leo, bibendum non magna eget, vestibulum consequat turpis. Phasellus eu volutpat magna, ultricies varius nibh. Proin efficitur porttitor massa eu dapibus. Donec sit amet tortor vitae dolor facilisis viverra. Quisque at fringilla lectus. Nunc vel sodales arcu, venenatis varius ipsum. Vivamus scelerisque nibh et suscipit commodo. Morbi quis augue id purus convallis luctus.</h3>
+                </div>
+            </center>
+        </div>
+        <!-- section 4 -->
+        <div class="section" id="section4">
+            <center>
+                <div class="row">
+                    <img class="section4-img" src="{{asset('images/img/main/section4.svg')}}">
+                </div>
+                <div class="row">
+                    <h3 class="section3-anim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula, ante sit amet faucibus accumsan, orci ligula fermentum urna, a efficitur ex libero eu nisl. Integer vulputate egestas nisi, at fermentum ligula accumsan in. Integer et ipsum at neque rhoncus ultricies. Phasellus velit leo, bibendum non magna eget, vestibulum consequat turpis. Phasellus eu volutpat magna, ultricies varius nibh. Proin efficitur porttitor massa eu dapibus. Donec sit amet tortor vitae dolor facilisis viverra. Quisque at fringilla lectus. Nunc vel sodales arcu, venenatis varius ipsum. Vivamus scelerisque nibh et suscipit commodo. Morbi quis augue id purus convallis luctus.</h3>
+                </div>
+            </center>
         </div>
     </div>
+    <script type="text/javascript">
+        $('#fullpage').fullpage({
+            onLeave: function(index, nextIndex, direction){
+                var leavingSection = $(this);
+
+                if(index == 1 && direction == 'down'){
+                    setTimeout(function(){
+                        $(".section0-anim").removeClass("fadeInRight");
+                        $(".section0-head").removeClass("fadeInLeft");
+                    }, 100);
+                }
+                else if(index == 2 && direction == 'up'){
+                    setTimeout(function(){
+                        $(".section0-anim").addClass("fadeInRight");
+                        $(".section0-head").addClass("fadeInLeft");
+                    }, 100);
+                }
+
+                if(index == 1 && direction =='down'){
+                    $(".section1-img").addClass("bounceIn");
+                    $(".section1-anim").addClass("bounceIn");
+                }
+                //after leaving section 2
+                else if(index == 2 && direction =='down'){
+                    $(".section2-img").addClass("bounceInDown");
+                    $(".section2-anim").addClass("bounceInUp");
+                }
+                else if(index == 3 && direction == 'down'){
+                    $(".section3-img").addClass("fadeInRight");
+                    $(".section3-anim").addClass("fadeInLeft");
+                }
+                else if(index == 4 && direction == 'down'){
+                    $(".section3-anim").addClass("fadeInRight");
+                    $(".section4-img").addClass("fadeInLeft");
+                }
+
+                else if(index == 2 || index == 3 || index == 4 || index == 5 && direction == 'up'){
+                    $(".section1-anim").removeClass("bounceIn");
+                    $(".section1-img").removeClass("bounceIn");
+                    $(".section2-anim").removeClass("bounceInUp");
+                    $(".section2-img").removeClass("bounceInDown");
+                    $(".section3-img").removeClass("fadeInRight");
+                    $(".section3-anim").removeClass("fadeInLeft");
+                    $(".section3-anim").removeClass("fadeInRight");
+                    $(".section4-img").removeClass("fadeInLeft");
+                }
+            }
+        });
+    </script>
 @endsection

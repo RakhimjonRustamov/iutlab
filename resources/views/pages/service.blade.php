@@ -2,19 +2,21 @@
 @section('title', 'Services')
 @section('stylesheets')
     <style type="text/css">
-        #particles-js {
-            position: fixed;
-            width: 100%;
+        .body-bg{
+            -webkit-animation: Gradient 15s ease infinite;
+            -moz-animation: Gradient 15s ease infinite;
+            animation: Gradient 15s ease infinite;
+            width: 100wh;
             height: 100%;
-            background-color: #19B5FE;
-            background-image: url("");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 50% 50%;
-            z-index: 2;
+            color: #fff;
+            background: linear-gradient(-45deg, #BBDEFB, #64B5F6, #2196F3, #1976D2, #283593);
+            background-size: 400% 400%;
         }
+
         .service-block{
-            background-color: #fff;
+            box-shadow: 2px 2px 10px black;
+            border-radius: 20px;
+            background-color: rgba(255,255,255,0.8);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -29,26 +31,18 @@
 @endsection
 
 @section('scripts')
-    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
-
-    <script type="text/javascript">
-        /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-        particlesJS.load('particles-js', 'assets/particles.json', function() {
-            console.log('callback - particles.js config loaded');
-        });
-    </script>
-
 
 @endsection
 
 @section('content')
+    <div class="body-bg">
     <style type="text/css">#nav{margin-right:100px}</style>
 
     <div class="container service-block">
         <div class="row" align="center">
             <div class="col-md-4">
                 <div class="col-md-4 col-sm-4">
-                    <a href="contact us.html" class="glyphicon glyphicon-globe icons"></a>
+                    <a href="{{route('contact')}}" class="glyphicon glyphicon-globe icons"></a>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h3>WEB РАЗРАБОТКА</h3>
@@ -57,7 +51,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-4 col-sm-4">
-                    <a href="contact us.html" class="fa fa-android icons"></a>
+                    <a href="{{route('contact')}}" class="fa fa-android icons"></a>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h3>МОБИЛЬНАЯ РАЗРАБОТКА</h3>
@@ -66,7 +60,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-4 col-sm-4">
-                    <a href="contact us.html" class="fa fa-desktop icons"></a>
+                    <a href="{{route('contact')}}" class="fa fa-desktop icons"></a>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h3>РАЗРАБОТКА НА DESKTOP</h3>
@@ -77,7 +71,7 @@
         <div class="row" align="center">
             <div class="col-md-4">
                 <div class="col-md-4 col-sm-4">
-                    <a href="contact us.html" class="fa fa-rocket icons"></a>
+                    <a href="{{route('contact')}}" class="fa fa-rocket icons"></a>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h3>SEO & SMM</h3>
@@ -86,7 +80,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-4 col-sm-4">
-                    <a href="contact us.html" class="fa fa-leaf icons"></a>
+                    <a href="{{route('contact')}}" class="fa fa-leaf icons"></a>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h3>ДИЗАЙН</h3>
@@ -95,7 +89,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-4 col-sm-4">
-                    <a href="contact us.html" class="fa fa-compress icons"></a>
+                    <a href="{{route('contact')}}" class="fa fa-compress icons"></a>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h3>ПРОЧЕЕ</h3>
@@ -104,6 +98,5 @@
             </div>
         </div>
     </div>
-    <div id="particles-js"></div>
-    <script src="{{asset('js/particles.js')}}"></script>
+    </div>
 @endsection

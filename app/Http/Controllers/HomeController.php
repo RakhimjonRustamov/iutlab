@@ -8,4 +8,8 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function error(){
+        return view('404');
+    }
+
 }

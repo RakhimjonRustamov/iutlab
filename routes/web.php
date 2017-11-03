@@ -12,6 +12,7 @@ Route::resource('admin/posts', 'PostController');
 
 //Auhtontication
 Auth::routes();
+Route::get('logout', 'HomeController@error')->name('error');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('blog', 'BlogController@userBlog')->name('blog.userBlog');
 //blog
